@@ -83,7 +83,10 @@ export function useGameState () {
       if (dealerScore < DEALER_MIN_VALUE) {
         drawCard(DEALER);
       } else {
-        if (dealerScore > playerScore && dealerScore <= BLACKJACK_VALUE) {
+        if (
+          (dealerScore > playerScore && dealerScore <= BLACKJACK_VALUE) ||
+          dealerScore === playerScore
+        ) {
           setGameStatusWithDelay(DEALER_WINS);
         } else {
           setGameStatusWithDelay(PLAYER_WINS);
