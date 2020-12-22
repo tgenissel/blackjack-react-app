@@ -1,0 +1,23 @@
+export const CARDS = {
+  ACE: 'ACE',
+  JACK: 'JACK',
+  QUEEN: 'QUEEN',
+  KING: 'KING',
+};
+
+export const STATUSES = {
+  IDLE: 'IDLE',
+  PLAYER_TURN: 'PLAYER_TURN',
+  DEALER_TURN: 'DEALER_TURN',
+  BLACKJACK: 'BLACKJACK',
+  PLAYER_WINS: 'PLAYER_WINS',
+  DEALER_WINS: 'DEALER_WINS',
+};
+
+export const PLAYERS = {
+  DEALER: 'DEALER',
+  PLAYER: 'PLAYER',
+};
+
+export const BLACKJACK_VALUE = 21;
+export const DEALER_MIN_VALUE = 17;

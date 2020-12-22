@@ -1,0 +1,18 @@
+.Score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #191956;
+  color: white;
+  font-size: 14px;
+  min-height: 34px;
+  min-width: 34px;
+  margin: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .Score {
+    margin: 10px;
+  }
+}
