@@ -1,0 +1,41 @@
+.Button {
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  font-family: inherit;
+  font-size: 15px;
+  letter-spacing: 2px;
+  cursor: pointer;
+
+  & + & {
+    margin-left: 20px;
+  }
+
+  &:disabled {
+    cursor: none;
+    opacity: 0.2;
+  }
+
+  &.neutral {
+    background: #191956;
+  }
+
+  &.warning {
+    background: #b70027;
+  }
+
+  &.success {
+    background: #8cc63f;
+  }
+}
+
+.emoji {
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .Button {
+    width: 50%;
+    margin: 0;
+  }
+}

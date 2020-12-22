@@ -1,0 +1,13 @@
+.Card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-left: -40px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
+}
+
+.Image {
+  width: 18vh;
+  min-width: 80px;
+  vertical-align: middle;
+}

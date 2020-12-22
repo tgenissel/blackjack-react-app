@@ -1,0 +1,13 @@
+.Player {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+@media only screen and (max-width: 767px) {
+  .Player {
+    height: 45vh;
+  }
+}

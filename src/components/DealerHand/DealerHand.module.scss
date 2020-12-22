@@ -1,0 +1,13 @@
+.Dealer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+@media only screen and (max-width: 767px) {
+  .Dealer {
+    height: 45vh;
+  }
+}

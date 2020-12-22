@@ -1,0 +1,43 @@
+.Overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  opacity: 0.7;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Message {
+  font-size: 50px;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.Blackjack,
+.YouWin,
+.YouLose {
+  padding: 10px;
+}
+
+.Blackjack {
+  background: #191956;
+}
+
+.YouWin {
+  background: #8cc63f;
+}
+
+.YouLose {
+  background: #b70027;
+}
