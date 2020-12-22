@@ -5,7 +5,7 @@ import styles from './Card.module.scss';
 function Card({ code }) {
   return (
     <li className={ClassNames(styles.Card, 'animate__fadeInDownBig')}>
-      <img className={styles.Image} src={`/assets/cards/${code}.svg`} alt="" />
+      <img className={styles.Image} src={`${process.env.PUBLIC_URL}/assets/cards/${code}.svg`} alt="" />
     </li>
   );
 };
