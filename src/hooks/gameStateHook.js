@@ -24,6 +24,12 @@ export function useGameState () {
   const [gameState, setGameState] = useState(initialState);
   const [gameStatus, setGameStatus] = useState(IDLE);
 
+  const setGameStatusWithDelay = (gameStatus) => {
+    setTimeout(() => {
+      setGameStatus(gameStatus);
+    }, 1000);
+  };
+
   const newGame = async () => {
     const { deck_id: deckId } = await newShuffledDeck();
     const { cards } = await drawCardsFromDeck(deckId, 4);
@@ -66,21 +72,21 @@ export function useGameState () {
     if (gameStatus === PLAYER_TURN) {
       if (playerScore === BLACKJACK_VALUE) {
         if (gameState.playerCards.length === 2 ) {
-          setGameStatus(BLACKJACK);
+          setGameStatusWithDelay(BLACKJACK);
         } else {
-          setGameStatus(PLAYER_WINS);
+          setGameStatusWithDelay(PLAYER_WINS);
         }
       } else if (playerScore > BLACKJACK_VALUE) {
-        setGameStatus(DEALER_WINS);
+        setGameStatusWithDelay(DEALER_WINS);
       }
     } else if (gameStatus === DEALER_TURN) {
       if (dealerScore < DEALER_MIN_VALUE) {
         drawCard(DEALER);
       } else {
         if (dealerScore > playerScore && dealerScore <= BLACKJACK_VALUE) {
-          setGameStatus(DEALER_WINS);
+          setGameStatusWithDelay(DEALER_WINS);
         } else {
-          setGameStatus(PLAYER_WINS);
+          setGameStatusWithDelay(PLAYER_WINS);
         }
       }
     }
