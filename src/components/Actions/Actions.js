@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types';
-import Button, { buttonColors } from '../Button/Button'
+import useTranslation from 'next-translate/useTranslation';
+
+import Button, { buttonColors } from '../Button/Button';
 import styles from './Actions.module.scss';
 
 function Actions({ playerHit, playerStand, disabled}) {
+  const { t } = useTranslation('blackjack');
+
   return (
     <div className={styles.Actions}>
       <Button
@@ -11,7 +15,7 @@ function Actions({ playerHit, playerStand, disabled}) {
         color={buttonColors.WARNING}
         emoji="🖐"
       >
-        Stand
+        {t`stand`}
       </Button>
       <Button
         disabled={disabled}
@@ -19,7 +23,7 @@ function Actions({ playerHit, playerStand, disabled}) {
         color={buttonColors.SUCCESS}
         emoji="👉"
       >
-        Hit
+        {t`hit`}
       </Button>
     </div>
   );

@@ -1,5 +1,9 @@
 import FocusTrap from 'react-focus-trap';
+import { paramCase } from "param-case";
+import useTranslation from 'next-translate/useTranslation';
+
 import { STATUSES } from '../../constants';
+
 import styles from './Message.module.scss';
 
 const {
@@ -8,49 +12,43 @@ const {
   DEALER_WINS,
 } = STATUSES;
 
-const Blackjack = () => <div className={styles.Blackjack}>BLACKJACK!</div>;
-const YouWin = () => <div className={styles.YouWin}>YOU WIN!</div>;
-const YouLose = () => <div className={styles.YouLose}>DEALER WINS...</div>;
-
-function Message({ gameStatus, children }) {
-  let Message = null;
-  switch (gameStatus) {
-    case BLACKJACK:
-      Message = Blackjack;
-      break;
-    case PLAYER_WINS:
-      Message = YouWin;
-      break
-    case DEALER_WINS:
-      Message = YouLose;
-      break;
-    default:
-      Message = null;
-  }
-
-  if (!Message) return null;
+const Result = ({ gameStatus }) => {
+  const { t } = useTranslation('blackjack');
+  const result = paramCase(gameStatus);
 
   return (
-    <>
-      <div className={styles.Overlay}></div>
-      <FocusTrap>
-          <div
-            className={styles.Dialog}
-            role="dialog"
-            aria-labelledby="dialog1Title"
-          >
-            <div
-              className={styles.Message}
-              aria-live="polite"
-              id="dialog-message"
-            >
-              <Message />
-            </div>
-            {children}
-          </div>
-      </FocusTrap>
-    </>
+    <div className={styles[result]}>
+      {t(result)}
+    </div>
   );
+}
+
+function Message({ gameStatus, children }) {
+  if ([BLACKJACK, PLAYER_WINS, DEALER_WINS].includes(gameStatus)) {
+    return (
+      <>
+        <div className={styles.Overlay}></div>
+        <FocusTrap>
+            <div
+              className={styles.Dialog}
+              role="dialog"
+              aria-labelledby="dialog1Title"
+            >
+              <div
+                className={styles.Message}
+                aria-live="polite"
+                id="dialog-message"
+              >
+                <Result gameStatus={gameStatus} />
+              </div>
+              {children}
+            </div>
+        </FocusTrap>
+      </>
+    );
+  }
+
+  return null;
 }
 
 export default Message;

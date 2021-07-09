@@ -1,3 +1,4 @@
+import useTranslation from 'next-translate/useTranslation';
 
 import { useGameState } from '../hooks/gameStateHook';
 import DealerHand from '../components/DealerHand/DealerHand';
@@ -11,6 +12,7 @@ import { STATUSES } from '../constants';
 import styles from '../styles/App.module.scss';
 
 function App() {
+  const { t } = useTranslation('blackjack');
   const [{
       dealerCards,
       playerCards
@@ -27,7 +29,7 @@ function App() {
       type="button"
       onClick={newGame}
       color={buttonColors.NEUTRAL}
-    >LET'S PLAY!</Button>
+    >{t('play')}</Button>
   );
 
   if(gameStatus === STATUSES.IDLE){
