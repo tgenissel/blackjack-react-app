@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import styles from './Button.module.scss';
 
 export const buttonColors = {
@@ -11,7 +11,7 @@ export const buttonColors = {
 function Button({ onClick, emoji = '', color, children, disabled = false }) {
   return (
     <button
-      className={classNames(
+      className={clsx(
         styles.Button,
         {
           [styles.neutral]: color === buttonColors.NEUTRAL,
