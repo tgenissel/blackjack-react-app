@@ -1,4 +1,4 @@
-# Blackjack-react-app
+# Blackjack
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -7,7 +7,7 @@ This project is using react with hooks to manage the state of the game.
 
 ## Demo
 
-You can play blackjack hosted by github pages [https://tgenissel.github.io/blackjack-react-app/](https://tgenissel.github.io/blackjack-react-app)
+You can play blackjack hosted by github pages [https://yousign.github.io/blackjack/](https://yousign.github.io/blackjack)
 
 ## Available Scripts
 
