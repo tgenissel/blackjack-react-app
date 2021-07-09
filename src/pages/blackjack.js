@@ -1,13 +1,14 @@
 
-import { useGameState } from './hooks/gameStateHook';
-import DealerHand from './components/DealerHand/DealerHand';
-import Message from './components/Message/Message';
+import { useGameState } from '../hooks/gameStateHook';
+import DealerHand from '../components/DealerHand/DealerHand';
+import Message from '../components/Message/Message';
 
-import styles from './App.module.scss';
-import PlayerHand from './components/PlayerHand/PlayerHand';
-import Button, { buttonColors } from './components/Button/Button';
-import Actions from './components/Actions/Actions';
-import { STATUSES } from './constants';
+import PlayerHand from '../components/PlayerHand/PlayerHand';
+import Button, { buttonColors } from '../components/Button/Button';
+import Actions from '../components/Actions/Actions';
+import { STATUSES } from '../constants';
+
+import styles from '../styles/App.module.scss';
 
 function App() {
   const [{

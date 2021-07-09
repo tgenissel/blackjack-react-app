@@ -4,7 +4,7 @@ import styles from './Card.module.scss';
 function Card({ code }) {
   return (
     <li className={styles.Card}>
-      <img className={styles.Image} src={`/blackjack/assets/cards/${code}.svg`} alt="" />
+      <img className={styles.Image} src={`/assets/cards/${code}.svg`} alt="" />
     </li>
   );
 }
