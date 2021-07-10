@@ -25,21 +25,14 @@
   margin-bottom: 40px;
 }
 
-.result {
-  padding: 10px;
-}
-
 .blackjack {
-  composes: result;
   background: #191956;
 }
 
 .player-wins {
-  composes: result;
   background: #8cc63f;
 }
 
 .dealer-wins {
-  composes: result;
   background: #b70027;
 }
