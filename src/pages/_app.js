@@ -1,9 +1,11 @@
 import Head from 'next/head';
 
+import { wrapper } from '../app/store.ts';
+
 import '../styles/globals.scss';
 
 // This default export is required in a new `pages/_app.js` file.
-export default function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
@@ -20,3 +22,5 @@ export default function MyApp({ Component, pageProps }) {
     </>
   )
 }
+
+export default wrapper.withRedux(MyApp);
