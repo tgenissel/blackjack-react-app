@@ -1,26 +1,26 @@
-import { newShuffledDeck } from "../../app/services/blackjack";
+import { newShuffledDeck } from '../../app/services/blackjack';
 
-import { wrapper } from "../../app/store.ts";
+import { wrapper } from '../../app/store.ts';
 
 function App() {
   return null;
 }
 
-export const getServerSideProps = wrapper.getServerSideProps(
-  (store) => async (context) => {
-    const { data: { deck_id } } = await store.dispatch(newShuffledDeck.initiate(null));
+export const getServerSideProps = wrapper.getServerSideProps((store) => async (context) => {
+  const {
+    data: { deck_id }
+  } = await store.dispatch(newShuffledDeck.initiate(null));
 
-    if (deck_id) {
-      return {
-        redirect: {
-          destination: `/blackjack/${deck_id}`,
-          permanent: false,
-        },
-      };
-    }
-
-    return { props: {} };
+  if (deck_id) {
+    return {
+      redirect: {
+        destination: `/blackjack/${deck_id}`,
+        permanent: false
+      }
+    };
   }
-);
+
+  return { props: {} };
+});
 
 export default App;

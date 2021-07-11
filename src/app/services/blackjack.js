@@ -10,21 +10,24 @@ const blackjackApi = createApi({
         const deck_count = deckCount ?? 6;
 
         return `deck/new/shuffle?deck_count=${deck_count}`;
-      },
+      }
     }),
     drawCardsFromDeck: builder.mutation({
-      query: ({ deckId, count = 1 }) => `deck/${deckId}/draw/?count=${count}`,
+      query: ({ deckId, count = 1 }) => `deck/${deckId}/draw/?count=${count}`
     }),
     shuffleCardsFromDeck: builder.mutation({
-      query: ({ deckId }) => `deck/${deckId}/shuffle/`,
-    }),
-  }),
-})
+      query: ({ deckId }) => `deck/${deckId}/shuffle/`
+    })
+  })
+});
 
 // Export hooks for usage in functional components
-export const { useNewShuffledDeckMutation, useDrawCardsFromDeckMutation, useShuffleCardsFromDeckMutation } = blackjackApi;
+export const { useNewShuffledDeckMutation, useDrawCardsFromDeckMutation, useShuffleCardsFromDeckMutation } =
+  blackjackApi;
 
 // Possible exports
-export const { endpoints: { newShuffledDeck, drawCardsFromDeck, shuffleCardsFromDeck } } = blackjackApi;
+export const {
+  endpoints: { newShuffledDeck, drawCardsFromDeck, shuffleCardsFromDeck }
+} = blackjackApi;
 
 export default blackjackApi;

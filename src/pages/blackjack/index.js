@@ -11,16 +11,13 @@ function App() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    router.push("/blackjack/new");
-  }
+    router.push('/blackjack/new');
+  };
 
   const PlayButton = () => (
-    <Button
-      className={styles.LetsPlay}
-      type="button"
-      onClick={handleClick}
-      color={buttonColors.NEUTRAL}
-    >{t('play')}</Button>
+    <Button className={styles.LetsPlay} type="button" onClick={handleClick} color={buttonColors.NEUTRAL}>
+      {t('play')}
+    </Button>
   );
 
   return (
