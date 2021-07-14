@@ -1,5 +1,6 @@
 import FocusTrap from 'react-focus-trap';
 import { paramCase } from "param-case";
+import clsx from 'clsx';
 import useTranslation from 'next-translate/useTranslation';
 
 import { STATUSES } from '../../constants';
@@ -17,7 +18,7 @@ const Result = ({ gameStatus }) => {
   const result = paramCase(gameStatus);
 
   return (
-    <div className={styles[result]}>
+    <div className={clsx(styles[result], 'p-2.5')}>
       {t(result)}
     </div>
   );
